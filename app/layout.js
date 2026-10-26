@@ -8,8 +8,8 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: 'CRUD Produk - Next.js + MySQL',
-  description: 'Contoh aplikasi CRUD dengan Next.js dan MySQL (Aiven)',
+  title: 'CRUD Produk - Next.js + PostgreSQL',
+  description: 'Contoh aplikasi CRUD dengan Next.js dan PostgreSQL',
 };
 
 export default function RootLayout({ children }) {

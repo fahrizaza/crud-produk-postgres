@@ -5,7 +5,7 @@ import { getPool } from '@/lib/db';
 export async function GET() {
   try {
     const pool = getPool();
-    const [rows] = await pool.query(`
+    const { rows } = await pool.query(`
       SELECT
         p.id,
         p.name,
@@ -43,14 +43,14 @@ export async function POST(request) {
     const categoryId = category_id ? Number(category_id) : null;
 
     const pool = getPool();
-    const [result] = await pool.query(
-      'INSERT INTO products (name, description, price, category_id) VALUES (?, ?, ?, ?)',
+    const { rows } = await pool.query(
+      'INSERT INTO products (name, description, price, category_id) VALUES ($1, $2, $3, $4) RETURNING id',
       [name, description || null, price, categoryId]
     );
 
     return NextResponse.json(
       {
-        id: result.insertId,
+        id: rows[0].id,
         name,
         description: description || null,
         price,

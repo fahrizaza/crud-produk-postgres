@@ -140,7 +140,7 @@ export default function Home() {
       <header className="app-header anim-left delay-1">
         <div>
           <h1>CRUD Produk</h1>
-          <p className="subtitle">Next.js + MySQL (Aiven) — kelola produk & kategori</p>
+          <p className="subtitle">Next.js + PostgreSQL — kelola produk & kategori</p>
         </div>
         <div className="header-stat">
           <span className="stat-number">{products.length}</span>
